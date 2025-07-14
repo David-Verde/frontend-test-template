@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Apply Digital Test",
+  title: "GamerShop",
   description: "Frontend development test for Apply Digital",
 };
 
@@ -15,8 +15,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+ <html lang="en">
+      <body className={`${inter.className} bg-background text-text-primary`}>
+
+        <main className="min-h-screen">
+          {children}
+        </main>
+
+      </body>
     </html>
   );
 }
