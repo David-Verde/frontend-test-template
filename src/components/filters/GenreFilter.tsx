@@ -12,21 +12,21 @@ export const GenreFilter = ({ genres }: GenreFilterProps) => {
   const searchParams = useSearchParams();
   const currentGenre = searchParams.get('genre') || 'all';
 
-   const handleFilterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleFilterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const newGenre = event.target.value;
-    const params = new URLSearchParams(window.location.search);
+    const params = new URLSearchParams(searchParams);
 
     if (newGenre === 'all') {
       params.delete('genre');
     } else {
       params.set('genre', newGenre);
     }
-    params.delete('page'); 
+    params.delete('page');
 
-
-    window.location.href = `${pathname}?${params.toString()}`;
+    const newUrl = `${pathname}?${params.toString()}`;
+    router.push(newUrl, { scroll: false });
+    router.refresh();
   };
-
 
   return (
     <div className="flex items-center gap-x-4">

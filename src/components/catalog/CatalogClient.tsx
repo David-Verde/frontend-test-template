@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Game } from '@/types';
 import { gameService } from '@/services/gameService';
@@ -19,6 +19,12 @@ export const CatalogClient = ({ initialGames, totalPages, initialPage, genre }: 
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
+  // Efecto para sincronizar el estado cuando cambian las props iniciales
+  useEffect(() => {
+    setGames(initialGames);
+    setCurrentPage(initialPage);
+  }, [initialGames, initialPage]);
+
   const loadMoreGames = async () => {
     if (currentPage >= totalPages) return;
     setIsLoading(true);
@@ -29,7 +35,6 @@ export const CatalogClient = ({ initialGames, totalPages, initialPage, genre }: 
     setGames((prevGames) => [...prevGames, ...data.games]);
     setCurrentPage(nextPage);
     setIsLoading(false);
-
 
     const params = new URLSearchParams(window.location.search);
     params.set('page', nextPage.toString());
@@ -50,7 +55,7 @@ export const CatalogClient = ({ initialGames, totalPages, initialPage, genre }: 
         <div className="text-center mt-lg">
           <button
             onClick={loadMoreGames}
-            className="bg-primary text-text-on-dark font-bold py-2 px-6 rounded hover:bg-blue-700 transition-colors"
+               className="w-full mt-6 bg-[#585660] text-white font-bold py-3 rounded hover:opacity-90 transition-opacity"
           >
             See More
           </button>

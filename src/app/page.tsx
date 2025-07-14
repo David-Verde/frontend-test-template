@@ -27,7 +27,6 @@ export default async function HomePage({ searchParams }: HomePageProps) {
 
       {games.length > 0 ? (
         <CatalogClient 
-          key={genre || 'all-games'} 
           initialGames={games} 
           totalPages={totalPages} 
           initialPage={currentPage}
