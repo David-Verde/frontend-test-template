@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Game } from '@/types';
+import { AddToCartButton } from './AddToCartButton';
 
 interface GameCardProps {
   game: Game;
@@ -38,9 +39,7 @@ export const GameCard = ({ game }: GameCardProps) => {
         </div>
         
         <div className="mt-auto">
-          <button className="w-full border border-border-primary rounded px-4 py-2 text-sm font-semibold hover:bg-gray-100 transition-colors">
-            ADD TO CART
-          </button>
+          <AddToCartButton game={game} />
         </div>
       </div>
     </div>
