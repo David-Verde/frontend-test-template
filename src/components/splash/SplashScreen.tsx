@@ -9,7 +9,7 @@ export const SplashScreen = () => {
     // Oculta el splash screen después de 5 segundos (5000ms)
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 5000);
+    }, 6000);
 
     return () => clearTimeout(timer);
   }, []);
