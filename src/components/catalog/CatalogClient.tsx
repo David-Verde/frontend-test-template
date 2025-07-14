@@ -51,11 +51,11 @@ export const CatalogClient = ({ initialGames, totalPages, initialPage, genre }: 
 
       {isLoading && <p className="text-center mt-lg">Loading more games...</p>}
 
-      {currentPage < totalPages && !isLoading && (
-        <div className="text-center mt-lg">
+        {currentPage < totalPages && !isLoading && (
+        <div className="mt-lg py-md">
           <button
             onClick={loadMoreGames}
-               className="w-full mt-6 bg-[#585660] text-white font-bold py-3 rounded hover:opacity-90 transition-opacity"
+            className="bg-button-secondary text-white font-bold py-2 px-12 rounded hover:opacity-90 transition-opacity w-full sm:w-auto"
           >
             See More
           </button>
