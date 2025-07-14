@@ -1,5 +1,6 @@
 import { gameService } from '@/services/gameService';
-import { GameCard } from '@/components/game/GameCard';
+import { GenreFilter } from '@/components/filters/GenreFilter';
+import { CatalogClient } from '@/components/catalog/CatalogClient';
 
 interface HomePageProps {
   searchParams: {
@@ -19,22 +20,22 @@ export default async function HomePage({ searchParams }: HomePageProps) {
 
   return (
     <section>
-      <div className="mb-lg">
-        <h1 className="text-3xl font-bold mb-sm">Top Sellers</h1>
-        {/* filters */}
+      <div className="mb-lg flex flex-col sm:flex-row sm:justify-between sm:items-center gap-y-md">
+        <h1 className="text-3xl font-bold">Top Sellers</h1>
+        <GenreFilter genres={availableFilters} />
       </div>
 
       {games.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-md">
-          {games.map((game) => (
-            <GameCard key={game.id} game={game} />
-          ))}
-        </div>
+        <CatalogClient 
+          key={genre || 'all-games'} 
+          initialGames={games} 
+          totalPages={totalPages} 
+          initialPage={currentPage}
+          genre={genre}
+        />
       ) : (
         <p>No games found matching your criteria.</p>
       )}
-
-      {/* see more */}
     </section>
   );
 }

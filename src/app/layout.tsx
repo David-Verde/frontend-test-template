@@ -6,7 +6,7 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "GamerShop",
   description: "The ultimate destination for gamers.",
 };
@@ -19,11 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-background text-text-primary`}>
-        <Header />
-        <main className="container mx-auto p-md min-h-screen">
-          {children}
-        </main>
-        <Footer />
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <main className="container mx-auto p-md flex-grow">
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
