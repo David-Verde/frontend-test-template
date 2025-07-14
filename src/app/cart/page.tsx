@@ -91,7 +91,7 @@ export default function CartPage() {
               </div>
 
                <button 
-                className="w-full mt-6 bg-[#585660] text-white font-bold py-3 rounded hover:opacity-90 transition-opacity"
+                className="w-full mt-6 bg-button-secondary text-white font-bold py-3 rounded hover:opacity-90 transition-opacity"
               >
                 Checkout
               </button>

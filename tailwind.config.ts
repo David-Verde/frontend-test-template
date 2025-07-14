@@ -23,7 +23,7 @@ const config: Config = {
 
 
         "border-primary": "#E5E5E5",
-
+        "button-secondary": '#585660',
     
         primary: "#3B82F6", 
       },

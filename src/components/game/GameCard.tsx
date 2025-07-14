@@ -18,7 +18,7 @@ export const GameCard = ({ game }: GameCardProps) => {
     <div className="bg-surface-primary rounded-lg shadow-md overflow-hidden flex flex-col">
       <div className="relative">
         {game.isNew && (
-          <div className="absolute top-2 left-2 bg-primary text-text-on-dark text-xs font-bold px-2 py-1 rounded z-10">
+          <div className="absolute top-2 left-2 bg-primary text-text-on-dark text-xs font-bold px-2 py-1 rounded">
             NEW
           </div>
         )}
