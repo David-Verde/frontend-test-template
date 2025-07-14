@@ -39,3 +39,6 @@ next-env.d.ts
 .idea
 .vscode
 yarn.lock
+.env
+.env.development
+.env.production
