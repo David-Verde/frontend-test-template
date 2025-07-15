@@ -2,11 +2,11 @@
 
 This repository contains the solution for the Apply Digital Front-End Developer test. It is a responsive e-commerce web application for a video game store, built with Next.js, TypeScript, and Tailwind CSS.
 
-[![Vercel Deploy](https://vercel.com/button)](https://frontend-test-template-2qmc1zo59-davidverdes-projects.vercel.app/)
+[![Vercel Deploy](https://vercel.com/button)](https://frontend-test-template-six.vercel.app/)
 
 ## Live Demo
 
-**You can view the live deployed application here:** [**GamerShop Live**](https://frontend-test-template-2qmc1zo59-davidverdes-projects.vercel.app/)
+**You can view the live deployed application here:** [**GamerShop Live**](https://frontend-test-template-six.vercel.app/)
 
 ---
 
