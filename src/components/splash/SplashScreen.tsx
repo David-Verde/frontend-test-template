@@ -25,8 +25,8 @@ export const SplashScreen = () => {
         playsInline 
         onEnded={() => setIsVisible(false)} 
       >
-        <source src="/videos/GamesStore.webm" type="video/webm" />
-        <source src="/videos/GamesStore.mp4" type="video/mp4" />
+        <source src="/videos/GamerShop.webm" type="video/webm" />
+        <source src="/videos/GamerShop.mp4" type="video/mp4" />
       </video>
     </div>
   );
