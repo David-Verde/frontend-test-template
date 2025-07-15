@@ -20,10 +20,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
 
   return (
     <section>
-      <div className="mb-lg flex flex-col sm:flex-row sm:justify-between sm:items-center gap-y-md">
-        <h1 className="text-3xl font-bold">Top Sellers</h1>
-        <GenreFilter genres={availableFilters} />
-      </div>
+      
 
       {games.length > 0 ? (
         <CatalogClient 
@@ -31,6 +28,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
           totalPages={totalPages} 
           initialPage={currentPage}
           genre={genre}
+          availableFilters={availableFilters}
         />
       ) : (
         <p>No games found matching your criteria.</p>
